@@ -1,4 +1,4 @@
-#  BST Student Management System (C Program)
+#  BST Student Management System 
 
 ##  Overview
 This project demonstrates the application of **Binary Search Trees (BST)** in managing student records efficiently using the C programming language.
