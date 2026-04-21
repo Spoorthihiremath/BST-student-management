@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node structure
 struct Node {
     int data;
     struct Node *left, *right;
 };
 
-// Create new node
 struct Node* createNode(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = value;
@@ -15,7 +13,6 @@ struct Node* createNode(int value) {
     return newNode;
 }
 
-// Insert node
 struct Node* insert(struct Node* root, int value) {
     if (root == NULL)
         return createNode(value);
@@ -28,7 +25,6 @@ struct Node* insert(struct Node* root, int value) {
     return root;
 }
 
-// Search node
 int search(struct Node* root, int key) {
     if (root == NULL)
         return 0;
@@ -41,7 +37,6 @@ int search(struct Node* root, int key) {
         return search(root->right, key);
 }
 
-// Inorder traversal
 void inorder(struct Node* root) {
     if (root != NULL) {
         inorder(root->left);
@@ -50,26 +45,29 @@ void inorder(struct Node* root) {
     }
 }
 
-// Main function
 int main() {
     struct Node* root = NULL;
+    int n, value, key;
 
-    root = insert(root, 50);
-    insert(root, 30);
-    insert(root, 70);
-    insert(root, 20);
-    insert(root, 40);
-    insert(root, 60);
-    insert(root, 80);
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter elements:\n");
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &value);
+        root = insert(root, value);
+    }
 
     printf("Inorder Traversal: ");
     inorder(root);
 
-    int key = 40;
+    printf("\nEnter element to search: ");
+    scanf("%d", &key);
+
     if (search(root, key))
-        printf("\nElement %d found", key);
+        printf("Element found\n");
     else
-        printf("\nElement %d not found", key);
+        printf("Element not found\n");
 
     return 0;
 }
