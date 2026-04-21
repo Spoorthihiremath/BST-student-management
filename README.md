@@ -61,17 +61,26 @@ Binary Search Tree is used because:
 
 ---
 
-##  Code
-The complete implementation is available in:
+
 ##  Code
 The complete implementation is available in:
 bst.c
 
 ---
 
+---
+
+##  Sample Input
+Enter number of elements: 5  
+Enter elements:  
+10 5 20 3 7  
+Enter element to search: 7  
+
+---
+
 ##  Sample Output
-Inorder Traversal: 20 30 40 50 60 70 80  
-Element 40 found
+Inorder Traversal: 3 5 7 10 20  
+Element found  
 
 ---
 
